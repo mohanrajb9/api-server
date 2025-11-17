@@ -31,6 +31,8 @@ jobs:
     
     deploy:
         runs-on: self-hosted
+        needs: Build-push-image
+        if: ${{ needs.Build-push-image.result == 'success' }}
         steps:
             - run: |
                 docker pull ${{ secrets.DOCKER_USERNAME }}/api-server:latest
