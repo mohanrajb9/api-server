@@ -39,7 +39,7 @@ jobs:
                 kubectl apply -f deploy.yml
          
             - run: |
-                kunectl apply -f service.yml
+                kubectl apply -f service.yml
 
             - run: |
                 kubectl rollout status deploy api-server
