@@ -34,6 +34,8 @@ jobs:
         needs: Build-push-image
         if: ${{ needs.Build-push-image.result == 'success' }}
         steps:
+            - uses: actions/checkout@v4
+
             - run: |
                 docker pull ${{ secrets.DOCKER_USERNAME }}/api-server:latest
 
