@@ -1,0 +1,16 @@
+apiversion: apps/v1
+kind: Deployment
+metadata:
+  name: api-server
+spec:
+  selector:
+    matchLabels:
+      app: api-server
+  template:
+    metadata:
+      labels:
+        app: api-server
+    spec:
+      containers:
+      - name: api-server
+        image: mohanrajbabu/api-server:latest
